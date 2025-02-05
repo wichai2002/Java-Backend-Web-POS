@@ -13,7 +13,9 @@ import java.util.Set;
 @Getter
 @Entity
 public class Product {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column

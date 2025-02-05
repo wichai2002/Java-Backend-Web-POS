@@ -20,6 +20,4 @@ public class ProductCategory {
     @Column(unique = true, nullable = false)
     private String name;
 
-    @ManyToMany(targetEntity = Product.class, mappedBy = "productCategories")
-    private Set<Product> products;
 }
