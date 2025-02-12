@@ -1,6 +1,5 @@
 package com.backend.pos.controllers;
 
-import com.backend.pos.repositorise.StaffRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -8,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.BeanUtils;
 import com.backend.pos.entity.Staff;
 import com.backend.pos.services.StaffService;
-
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,7 +24,7 @@ public class StaffController {
             List<Staff> staff = staffService.findAll();
 
             if (staff.isEmpty()) {
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+                return new ResponseEntity<>(Collections.emptyList(), HttpStatus.OK);
             }
 
             return new ResponseEntity<>(staff, HttpStatus.OK);
